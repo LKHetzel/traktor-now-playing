@@ -1,6 +1,7 @@
 var midi = require('midi');
 var config = require('./config');
 
+var fs = require('fs')
 
 var MSB_0 = -1;
 var LSB_0 = -1;
@@ -291,8 +292,24 @@ function FindStart ( line_idx ) {
                 line_static_str_VISUAL[0] = line_static_str[0];
                 line_static_str_VISUAL[1] = line_static_str[1];
 
+                console.log('Deck A:')
                 console.log('Track: ' + line_static_str[0]);
                 console.log('Artist: ' + line_static_str[1]);
+                
+fs.writeFile('/Volumes/ONAIR-SERVER/deckA_track.txt', 
+line_static_str[0], (err) => {
+                  if (err) {
+                      console.error(err)
+                      return
+                    }
+                });
+                fs.writeFile('/Volumes/ONAIR-SERVER/deckA_artist.txt', 
+line_static_str[1], (err) => {
+                  if (err) {
+                      console.error(err)
+                      return
+                    }
+                });
                 available_a = 1;
                 line_complete[0] = 0;
                 line_complete[1] = 0;
@@ -304,8 +321,23 @@ function FindStart ( line_idx ) {
                 line_static_str_VISUAL[2] = line_static_str[2];
                 line_static_str_VISUAL[3] = line_static_str[3];
 
+                console.log('Deck B:')
                 console.log('Track: ' + line_static_str[2]);
                 console.log('Artist: ' + line_static_str[3]);
+                fs.writeFile('/Volumes/ONAIR-SERVER/deckB_track.txt', 
+line_static_str[2], (err) => {
+                  if (err) {
+                      console.error(err)
+                      return
+                    }
+                });
+                fs.writeFile('/Volumes/ONAIR-SERVER/deckB_artist.txt', 
+line_static_str[3], (err) => {
+                  if (err) {
+                      console.error(err)
+                      return
+                    }
+                });
                 available_b = 1;
                 line_complete[2] = 0;
                 line_complete[3] = 0;
