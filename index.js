@@ -296,14 +296,14 @@ function FindStart ( line_idx ) {
                 console.log('Track: ' + line_static_str[0]);
                 console.log('Artist: ' + line_static_str[1]);
                 
-fs.writeFile('/Volumes/ONAIR-SERVER/deckA_track.txt', 
+fs.writeFile(`${config.deckA_Track}`, 
 line_static_str[0], (err) => {
                   if (err) {
                       console.error(err)
                       return
                     }
                 });
-                fs.writeFile('/Volumes/ONAIR-SERVER/deckA_artist.txt', 
+                fs.writeFile(`${config.deckA_Artist}`, 
 line_static_str[1], (err) => {
                   if (err) {
                       console.error(err)
@@ -324,14 +324,14 @@ line_static_str[1], (err) => {
                 console.log('Deck B:')
                 console.log('Track: ' + line_static_str[2]);
                 console.log('Artist: ' + line_static_str[3]);
-                fs.writeFile('/Volumes/ONAIR-SERVER/deckB_track.txt', 
+                fs.writeFile(`${config.deckB_Track}`, 
 line_static_str[2], (err) => {
                   if (err) {
                       console.error(err)
                       return
                     }
                 });
-                fs.writeFile('/Volumes/ONAIR-SERVER/deckB_artist.txt', 
+                fs.writeFile(`${config.deckB_Artist}`, 
 line_static_str[3], (err) => {
                   if (err) {
                       console.error(err)

@@ -1,7 +1,15 @@
 # traktor-now-playing
 A Node.JS script that reads the Tracks on Deck A and B from Traktor via midi.
-Currently the Metadata gets output to console, I plan on adding a local page that gets updated via jQuery,
+Currently the Metadata gets output to console, ~~I plan on adding a local page that gets updated via jQuery,~~
 so it can be used as a Stream overlay with OBS and their Browser Plugin.
+
+# This Fork Does:
+Added 4 config variables in config.js for 4 files, representing Artist and Track Name for both Deck A and Deck B.
+The data is still output to console for visibility but the data is also written to those 4 files.
+
+You can then use these files as data within OBS or another on-air graphics composing software to generate titles for your song name.
+
+Blog post coming on my site soon about how I make my graphics do this.
 
 ##How-To
 Requirements: Have Node and NPM installed.
